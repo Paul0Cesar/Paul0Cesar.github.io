@@ -1,0 +1,43 @@
+<section id="skills" class="hero">
+    <div class="hero-body">
+        <div class="container">
+
+            <div class="box" id="skillBox">
+                <span id="skillTitle">
+                    <h3 class="title text-color is-3">
+                        <span class="level-item dot"></span>
+                        Skills
+                        <span class="level-item dot"></span>
+                    </h3>
+                </span>
+                <div class="columns level is-vcentered">
+                    <div class="level-left column is-1">
+                        <button class="level-item button is-rounded">
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-left"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="column level-item has-text-centered">
+                        <div class="level">
+                            {% for skill in site.skills %}
+                            <figure class="image is-64x64"> <!-- or use is-96x96 -->
+                                <img src="{{site.baseurl_root}}/assets/images/skills/{{skill}}">
+                            </figure>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="level-right column is-1 is-flex">
+                        <button class="level-item is-align-items-flex-end  button is-rounded">
+                            <span class="icon is-small">
+                                <i class="fa fa-angle-right"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

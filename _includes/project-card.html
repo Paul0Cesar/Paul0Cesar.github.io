@@ -1,0 +1,45 @@
+<div class="column is-one-quarter-desktop is-half-tablet" id="{{include.project.category}}">
+    <div class="card" id="project-card">
+
+        <div class="card-image">
+            <figure class="image is-3by2">
+                <img src="https://unsplash.it/300/200/?random&pic=1" alt="">
+            </figure>
+            {% assign today = site.time | date: '%s' %}
+            {% assign start = include.project.date | date: '%s' %}
+            {% assign secondsSince = today | minus: start %}
+            {% assign hoursSince = secondsSince | divided_by: 60 | divided_by: 60 %}
+            {% assign daysSince = hoursSince | divided_by: 24  %}
+            {% if daysSince < 15 %}
+            <div class="card-content is-overlay is-clipped">
+                <span class="tag is-info" id="new-project">
+                    New!
+                </span>
+            </div>
+            {% endif %}
+        </div>
+
+        <footer class="card-footer box">
+            <div>
+                <div class="columns" style="width: 300px;">
+                    <div class="column">
+                        <h5 class="title is-5"> {{include.project.title}}</h5>
+                    </div>
+                    <div class="column is-narrow">
+                        <i class="level-item fa {% if include.project.visibility == 'public' %} fa-unlock {% else %}fa-lock{% endif %}"
+                            aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div>
+                    {% for tag in include.project.tags limit:5 %}
+                    <span class="tag is-rounded">{{tag}}</span>
+                    {% endfor %}
+                </div>
+
+                <div class="is-pulled-right">
+                    <a>{% t global.see_more_details%}</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

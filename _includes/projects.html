@@ -1,0 +1,53 @@
+<section id="projects" class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h3 class="title  text-color is-3">{% t global.project %}</h3>
+                </div>
+                <div class="column">
+                    <div class="box" id="skillsFilterBox">
+                        <div class="tabs is-centered">
+                            <ul id="filters">
+                                {% for filter in site.translations[site.lang].project_category %}
+                                {% if filter[0]=='all' %}
+                                <li class="is-active" onclick="filterUsingCategory('{{filter[0]}}',this)">
+                                    <a class="text-color" style="color: white;">{{filter[1]}}</a>
+                                </li>
+                                {% else %}
+                                <li onclick="filterUsingCategory('{{filter[0]}}',this)">
+                                    <a class="text-color"  style="color: white;">{{filter[1]}}</a>
+                                </li>
+                                {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-centered is-multiline" id="project-elements">
+                {% for project in site.posts %}
+                {% include project-card.html project=project%}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function filterUsingCategory(selectedCategory, button) {
+        const filters = document.getElementById("filters");
+        for (const child of filters.children) {
+            child.classList.remove("is-active");
+        }
+        button.classList.add("is-active");
+        const posts = document.getElementById("project-elements");
+        for (const child of posts.children) {
+            if (selectedCategory == 'all') {
+                child.style.display = 'unset';
+            } else {
+                child.style.display = (child.id == selectedCategory) ? 'unset' : 'none';
+            }
+        }
+    }
+</script>

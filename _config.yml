@@ -1,0 +1,18 @@
+
+
+title: Paulo C. - Under Construction
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  Paul0Cesar
+linkedin_username: paulocesarrocha
+stack_overflow_id: 12810465
+languages: ["en", "pt-br"]
+exclude_from_localizations: ["javascript","assets", "images", "css", "scripts", "favicon.ico"]
+skills: ["android.svg","kotlin.svg","java.svg","flutter.svg","nodejs.svg","django.svg","python.svg","maria.svg","mongo.svg"]
+
+# Keywords of the Site
+site-keywords: Mobile
+
+# Build settings
+plugins:
+  - jekyll-multiple-languages-plugin

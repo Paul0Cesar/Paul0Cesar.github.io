@@ -1,0 +1,24 @@
+global:
+  tagline: Português
+  short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum turpis a mi rutrum porta. Vestibulum rhoncus efficitur lacus at tincidunt. Quisque pulvinar mollis leo.
+  github: GitHub
+  project: Projetos
+  about: Sobre
+  downlad_cv: BAIXAR CV
+  contact: Contato
+  see_more_details: Ver Mais
+  contact_message:  Você pode me encontrar aqui
+navbar:
+  home: Home
+  about: Sobre  
+  skills: Habilidades
+  projects: Projetos
+  contact: Contato  
+langs:
+  en: Inglês
+  pt-br: Português
+project_category:
+  all: Todos
+  android: Android
+  flutter: Flutter
+  django: Django
