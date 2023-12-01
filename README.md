@@ -1,9 +1,4 @@
-# Paul0Cesar.github.io
-
-TO-DO:
-
-- When click on project photo, open a modal to show more projet's photos 
-- When  click on project,  open a modal to show more projet's info  
+# [Paulo C.](https://paul0cesar.github.io/)
 
 
 ## Run : 

@@ -1,12 +1,14 @@
 ---
-layout: post
-title: Example post
+layout: project
+title: Gigawatt
 cover: cover.jpg
 date:   2023-09-12 12:00:00
-category: en
+categories: pt-br
+category: android
+visibility: private
 tags:
  - Jetpack Compose
- -  Junit4
+ - Junit4
 ---
 
 ## Example 1

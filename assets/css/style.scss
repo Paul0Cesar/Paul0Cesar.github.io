@@ -4,30 +4,38 @@
 @import "main.scss";
 
 .background {
-    background-color: #13243e;
+    background-color: $primary;
 }
 
 .text-color {
     color: white;
 }
 
-// .home-background {
-//     background-image: url("{{site.baseurl_root}}/assets/images/home_background.svg");
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
-
-.home-background {
-    position: absolute;
-    clip-path: url("#start-background");
-    background: #173356;
-    background: linear-gradient(to bottom, #173356 0%, #274356 60%, #377386 100%);
+.hero {
     width: 100%;
-    height: 100%;
-    padding-top: 5%;
-    // max-width: 100%;
-    // max-height: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: relative;
 }
+
+.hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 15px;
+}
+
+#home {
+    clip-path: url("#start-background");
+    background: linear-gradient(to bottom, #173356 0%, #274356 60%, #377386 100%);
+}
+
 
 .star_collection {
     height: 3px;
@@ -102,7 +110,7 @@
 }
 
 #new-project {
-    background-color: #7f56da;
+    background-color: $tertiary;
 }
 
 .navbar {
@@ -115,16 +123,11 @@
 
 #skillsFilterBox {
     border-radius: 40px;
-    background-color: #41355d;
-}
-
-#skillsFilterBox .tabs .is-active {
-    background-color: #7f56da;
-    border-radius: 40px;
+    background-color: $tertiary;
 }
 
 #skillBox {
-    border: 1px solid #6b6589;
+    border: 1px solid $tertiary;
     line-height: 0.4em;
     margin: 10px 0 20px;
     background-color: transparent;
@@ -134,41 +137,35 @@
     border-radius: 30px;
 }
 
+#skillList {
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
 #skillTitle {
-    background-color: #13243e;
-    position: absolute;
-    left: 8%;
-    top: -3%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    background-color: $primary;
+    transform: translate(5%, -50%);
     display: inline-flex;
 }
 .dot {
     height: 0.4em;
     width: 0.4em;
     align-self: center;
-    background-color: #6b6589;
+    background-color: $tertiary;
     border-radius: 50%;
     display: inline-block;
 }
-.planet {
-    background-image: url("{{site.baseurl_root}}/assets/images/planet.svg");
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position:
-        center right,
-        50%,
-        50%;
-}
-// linear-gradient(211deg, #9eff00 6.8%, #2ea7db 91.74%)
-.contact-mountains {
-    background-image: url("{{site.baseurl_root}}/assets/images/mountains.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    margin-bottom: -1%;
-}
 
 #contact hr {
-    background-color: #d9d9d9;
+    border: 2px solid white;
+}
+
+#footer {
+    background-color: white;
+    padding: 1.25rem;
+    box-shadow:
+        0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+        0 0px 0 1px rgba(10, 10, 10, 0.02);
+    color: #4a4a4a;
+    display: block;
 }

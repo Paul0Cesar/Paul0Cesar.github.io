@@ -1,46 +1,54 @@
-<section id="projects" class="hero">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns">
-                <div class="column">
-                    <h3 class="title  text-color is-3">{% t global.project %}</h3>
-                </div>
-                <div class="column">
-                    <div class="box" id="skillsFilterBox">
-                        <div class="tabs is-centered">
-                            <ul id="filters">
-                                {% for filter in site.translations[site.lang].project_category %}
-                                {% if filter[0]=='all' %}
-                                <li class="is-active" onclick="filterUsingCategory('{{filter[0]}}',this)">
-                                    <a class="text-color" style="color: white;">{{filter[1]}}</a>
-                                </li>
-                                {% else %}
-                                <li onclick="filterUsingCategory('{{filter[0]}}',this)">
-                                    <a class="text-color"  style="color: white;">{{filter[1]}}</a>
-                                </li>
-                                {% endif %}
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<section id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-color">{% t global.project %}</h3>
             </div>
-            <div class="columns is-centered is-multiline" id="project-elements">
-                {% for project in site.posts %}
-                {% include project-card.html project=project%}
-                {% endfor %}
+            <div class="col text-center">
+                <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#skillsFilterBox" aria-controls="skillsFilterBox"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-filter fs-1" style="color: white;"></i>
+                </button>
+                <div class="collapse d-lg-block p-3" id="skillsFilterBox">
+                    <ul class="nav nav-pills justify-content-md-center" role="tablist" id="filters">
+                        {% for filter in site.translations[site.lang].project_category %}
+                        {% if filter[0]=='all' %}
+                        <li class="nav-item">
+                            <button class="nav-link rounded-pill  active" type="button" role="tab" aria-selected="true"
+                                onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <button class="nav-link rounded-pill" type="button" role="tab" aria-selected="false"
+                                onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
+        <div class="row m-5" id="project-elements">
+            {% for project in site.posts %}
+            {% include project-card.html project=project%}
+            {% endfor %}
+        </div>
     </div>
+    </div>
+
 </section>
 
 <script>
     function filterUsingCategory(selectedCategory, button) {
         const filters = document.getElementById("filters");
         for (const child of filters.children) {
-            child.classList.remove("is-active");
+            const button = child.children[0];
+            button.classList.remove("active");
+            button.setAttribute('aria-selected', false);
         }
-        button.classList.add("is-active");
+        button.classList.add("active")
+        button.setAttribute('aria-selected', true);
         const posts = document.getElementById("project-elements");
         for (const child of posts.children) {
             if (selectedCategory == 'all') {

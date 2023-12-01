@@ -1,6 +1,14 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
-@import url('https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css');
+
+
+$primary: #13243e;
+$secondary:#0d202b;
+$tertiary: #377386;
+//#d3eeff
+//#
+
+@import "bootstrap/bootstrap";
 
 html,
 body {

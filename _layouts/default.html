@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
+
 <body class="background">
   {% include header.html %}
   {% include home.html %}
-  {% include about.html %}
-  {% include skills.html %}
-  {% include projects.html %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        {% include about.html %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        {% include skills.html %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        {% include projects.html %}
+      </div>
+    </div>
+  </div>
   {% include contact.html %}
   {% include footer.html %}
 </body>
+
 </html>
