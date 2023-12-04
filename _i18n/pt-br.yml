@@ -8,6 +8,7 @@ global:
   contact: Contato
   see_more_details: Ver Mais
   contact_message:  Você pode me encontrar aqui
+  cv_path: /assets/resources/pt/cv.pdf
 navbar:
   home: Home
   about: Sobre  

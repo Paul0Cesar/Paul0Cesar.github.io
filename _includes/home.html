@@ -13,34 +13,25 @@
                 <h1 class="text-white"> {{site.title}}</h1>
                 <p class="lead text-white"> {% t global.short_description %}</p>
                 <div class="d-grid d-md-flex justify-content-md-center">
-                    <button type="button" class="btn btn-primary btn-lg px-4">
+                    <a class="btn btn-primary btn-lg px-4" href="{{site.baseurl_root}}{{site.translations[site.lang].global.cv_path}}" download="cv.pdf">
                         <span>
                             {% t global.downlad_cv %}
                         </span>
                         <span class="icon">
                             <i class="fa fa-cloud-download"></i>
-                        </span></button>
+                        </span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- <svg>
-    <defs>
-        <clipPath id="start-background">
-            <path
-                d="M0.999998 1235.17V-2L2604 -3.5C2853.2 27.7 2760.83 222.167 2683.5 315.5C2337 459.5 2401.5 670.5 2401.5 685C2507.9 922.2 2337.5 999.833 2239 1009C1357 1067 1409.17 978.167 1545.5 926.5C2391.9 861.7 2144.5 728.833 1915 670.5C1653 600.5 1349.83 676.667 1231 761.5C1009 957.5 626.5 968.5 463 949.5C97.7579 932.015 3.64232 1127 0.999998 1235.17V1244.5C0.923701 1241.47 0.92217 1238.36 0.999998 1235.17Z"
-                fill="#41355D" />
-    
-        </clipPath>
-    </defs>
-</svg> -->
-
-
 <svg>
     <defs>
         <clipPath id="profile-background">
-            <path d="M0.456293 1385.73C67.3518 1039.74 398.23 278.22 1186.58 -5.04553e-05C1190.4 368.13 958.519 1160.66 0.456293 1385.73Z" fill="#13243E"/>
+            <path
+                d="M0.456293 1385.73C67.3518 1039.74 398.23 278.22 1186.58 -5.04553e-05C1190.4 368.13 958.519 1160.66 0.456293 1385.73Z"
+                fill="#13243E" />
         </clipPath>
     </defs>
 

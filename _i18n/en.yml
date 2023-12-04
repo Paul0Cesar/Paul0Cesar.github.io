@@ -8,6 +8,7 @@ global:
   downlad_cv: DOWNLOAD CV
   see_more_details: See More
   contact_message:  You Can find me here
+  cv_path: /assets/resources/en/cv.pdf
 navbar:
   home: Home
   about: About  
