@@ -1,45 +1,169 @@
-<section id="projects">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3 class="text-color">{% t global.project %}</h3>
+<section id="projects" class="container">
+    <div class="row">
+        <div class="col">
+            <h3 class="text-color">{% t global.project %}</h3>
+        </div>
+        <div class="col text-center">
+            <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#skillsFilterBox" aria-controls="skillsFilterBox" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fa-solid fa-filter fs-1" style="color: white;"></i>
+            </button>
+            <div class="collapse d-lg-block p-3" id="skillsFilterBox">
+                <ul class="nav nav-pills justify-content-md-center" role="tablist" id="filters">
+                    {% for filter in site.translations[site.lang].project_category %}
+                    {% if filter[0]=='all' %}
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill active" type="button" id='{{filter[0]}}' role="tab"
+                            aria-selected="true"
+                            onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill" type="button" id='{{filter[0]}}' role="tab"
+                            aria-selected="false"
+                            onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
             </div>
-            <div class="col text-center">
-                <button class="btn btn-primary d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#skillsFilterBox" aria-controls="skillsFilterBox"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa-solid fa-filter fs-1" style="color: white;"></i>
+        </div>
+    </div>
+    <div class="row m-5" id="project-elements">
+        {% for project in site.posts%}
+        {% if forloop.index <= 6 %} {% include project-card.html visible=1 index=forloop.index project=project%} {%
+            else%} {% include project-card.html visible=0 index=forloop.index project=project%} {% endif %} {% endfor %}
+            </div>
+
+            {% if site.posts.size >6 %}
+            <ul class="list-inline text-center">
+                <button class="btn btn-light rounded-pill list-inline-item mx-3" id="previousBtn" style="display: none;"
+                    onclick="previousProjectPage()">
+                    <i class="fas fa-angle-left"></i>
                 </button>
-                <div class="collapse d-lg-block p-3" id="skillsFilterBox">
-                    <ul class="nav nav-pills justify-content-md-center" role="tablist" id="filters">
-                        {% for filter in site.translations[site.lang].project_category %}
-                        {% if filter[0]=='all' %}
-                        <li class="nav-item">
-                            <button class="nav-link rounded-pill  active" type="button" role="tab" aria-selected="true"
-                                onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <button class="nav-link rounded-pill" type="button" role="tab" aria-selected="false"
-                                onclick="filterUsingCategory('{{filter[0]}}',this)">{{filter[1]}}</button>
-                        </li>
-                        {% endif %}
-                        {% endfor %}
-                    </ul>
+
+                <button class="btn btn-light rounded-pill list-inline-item mx-3" style="display: unset;" id="nextBtn"
+                    onclick="nextProjectPage()">
+                    <i class="fa fa-angle-right"></i>
+                </button>
+            </ul>
+            {% endif %}
+
+            <div class="modal fade" id="projectPhotosModal" tabindex="-1" aria-labelledby="projectPhotosModal"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div id="carouselProjects" class="carousel slide">
+                            <div class="carousel-indicators">
+                                {% for project in site.posts %}
+                                {% if forloop.index ==1 %}
+
+                                <button type="button" data-bs-target="#carouselProjects"
+                                    data-bs-slide-to="{{forloop.index}}" class="active" aria-current="true"
+                                    aria-label="Slide {{forloop.index}}"></button>
+                                {% else %}
+
+                                <button type="button" data-bs-target="#carouselProjects"
+                                    data-bs-slide-to="{{forloop.index}}" aria-current="true"
+                                    aria-label="Slide {{forloop.index}}"></button>
+                                {% endif %}
+
+                                {% endfor %}
+                            </div>
+                            <div class="carousel-inner">
+                                {% for project in site.posts %}
+                                {% if forloop.index==1 %}
+
+                                <div class="carousel-item active">
+                                    <img src="https://unsplash.it/1000/1000/?random&pic=1" class="d-block w-100"
+                                        alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                {% else %}
+                                <div class="carousel-item">
+                                    <img src="https://unsplash.it/1000/1000/?random&pic=1" class="d-block w-100"
+                                        alt="...">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                {% endif %}
+
+                                {% endfor %}
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselProjects"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselProjects"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row m-5" id="project-elements">
-            {% for project in site.posts %}
-            {% include project-card.html project=project%}
-            {% endfor %}
-        </div>
-    </div>
-    </div>
 
 </section>
 
 <script>
+
+    let pagination = {};
+    let currentPage = 0;
+    const numberOfProjectToShow = 6;
+
+    function setVisibility(elementId, visibility) {
+        if (elementId.length == 0) {
+            return;
+        }
+        if (visibility != "unset" && visibility != "none") {
+            return;
+        }
+        const element = document.getElementById(elementId);
+        element.style.display = visibility;
+    }
+
+    function generatePagination() {
+        const projects = document.getElementById("project-elements");
+        const currentFilter = getActiveFilter();
+        pagination = {}
+
+        let i = 0;
+        let count = 0;
+        pagination[i] = [];
+        for (const project of projects.children) {
+            if (currentFilter == 'all' || project.id == currentFilter) {
+                if (count == numberOfProjectToShow) {
+                    count = 0;
+                    i++;
+                    pagination[i] = [];
+                }
+                count++;
+                pagination[i].push(project.getAttribute("index"));
+            }
+        }
+    }
+
+    function getActiveFilter() {
+        const filters = document.getElementById("filters");
+        let filterValue = "all"
+        for (const child of filters.children) {
+            const button = child.children[0];
+            if (button.classList.contains("active")) {
+                filterValue = button.id;
+                break;
+            }
+        }
+        return filterValue;
+    }
+
     function filterUsingCategory(selectedCategory, button) {
         const filters = document.getElementById("filters");
         for (const child of filters.children) {
@@ -49,13 +173,71 @@
         }
         button.classList.add("active")
         button.setAttribute('aria-selected', true);
-        const posts = document.getElementById("project-elements");
-        for (const child of posts.children) {
-            if (selectedCategory == 'all') {
-                child.style.display = 'unset';
-            } else {
-                child.style.display = (child.id == selectedCategory) ? 'unset' : 'none';
+
+        const projects = document.getElementById("project-elements");
+
+        let index = 0;
+        let count = 0;
+        for (const project of projects.children) {
+            let visibility = "none";
+            if (selectedCategory == 'all' || project.id == selectedCategory) {
+                if (index < numberOfProjectToShow) {
+                    visibility = "unset";
+                    index++;
+                }
+                count++;
             }
+            project.style.display = visibility;
         }
+        setVisibility("nextBtn", ((count > numberOfProjectToShow) ? "unset" : "none"));
+        setVisibility("previousBtn", "none");
+    }
+
+    function nextProjectPage() {
+        const projects = document.getElementById("project-elements");
+
+        generatePagination();
+        currentPage++;
+
+        if (!pagination.hasOwnProperty(currentPage)) {
+            return;
+        }
+
+        const pagesToShow = pagination[currentPage];
+
+        for (const project of projects.children) {
+            let visibility = "none";
+            const id = project.getAttribute("index");
+            if (pagesToShow.indexOf(id) != -1) {
+                visibility = "unset";
+            }
+            project.style.display = visibility;
+        }
+        setVisibility("nextBtn", ((pagination.hasOwnProperty(currentPage + 1)) ? "unset" : "none"));
+        setVisibility("previousBtn", "unset");
+    }
+
+    function previousProjectPage() {
+        const projects = document.getElementById("project-elements");
+
+        generatePagination();
+        currentPage--;
+
+        if (!pagination.hasOwnProperty(currentPage)) {
+            return;
+        }
+
+        const pagesToShow = pagination[currentPage];
+
+        for (const project of projects.children) {
+            let visibility = "none";
+            const id = project.getAttribute("index");
+            if (pagesToShow.indexOf(id) != -1) {
+                visibility = "unset";
+            }
+            project.style.display = visibility;
+        }
+        setVisibility("nextBtn", (pagination.hasOwnProperty(currentPage + 1) ? "unset" : "none"));
+        setVisibility("previousBtn", (currentPage - 1 > 0) ? "unset" : "none");
     }
 </script>
