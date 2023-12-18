@@ -1,7 +1,8 @@
 <div class="col-lg-4 col-md-6 p-3" id="{{include.project.category}}" {% if include.visible==1 %} style="display:unset;"
     {% else %} style="display:none;" {% endif %} index="{{include.index}}">
     <div class="card" id="project-card">
-        <img class="card-img-top rounded-5 p-2" src="https://unsplash.it/300/200/?random&pic=1" alt=""
+        <img class="card-img-top rounded-5 p-2"
+            src="{{site.baseurl_root}}/assets/images/projects/{{include.project.primary_cover}}" alt=""
             data-bs-toggle="modal" data-bs-target="#projectPhotosModal">
         {% assign today = site.time | date: '%s' %}
         {% assign start = include.project.date | date: '%s' %}
@@ -26,15 +27,19 @@
                 </div>
                 <div class="row">
                     <ul class="list-inline">
-                        {% for tag in include.project.tags limit:5 %}
+                        {% for tag in include.project.tags limit:6 %}
                         <span class="list-inline-item badge rounded-pill text-bg-secondary">{{tag}}</span>
                         {% endfor %}
                     </ul>
                 </div>
 
                 <!-- <div class="row">
-            <a>{% t global.see_more_details%}</a>
-        </div> -->
+                    <div class="col position-relative me-3">
+                        <a href="{{include.project.url}}"
+                            class="link-primary position-absolute top-50 end-0 translate-middle-y">{% t
+                            global.see_more_details%}</a>
+                    </div>
+                </div> -->
             </div>
     </div>
 </div>

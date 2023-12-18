@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body class="star-background">
+    {% include header.html %}
+    <div class="project-background me-5 ms-5">
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block img-fluid mx-auto" src="{{site.baseurl_root}}/assets/images/projects/{{page.cover}}" alt="">
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 mt-2">{{page.resume}}</p>
+                {% if include.project.visibility == 'public' %}
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-outline-secondary btn-lg px-4">GITHUB</button>
+                </div>
+                {% endif %}
+                <div class="justify-content-sm-center">
+                    <ul class="list-inline">
+                        {% for tag in page.tags %}
+                        <span class="list-inline-item badge rounded-pill text-bg-secondary">{{tag}}</span>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container text-color">
+        {{ content }}
+        <!-- <div class="row">
+            <div class="col">
+           
+            </div>
+        </div> -->
+    </div>
+    {% include footer.html %}
+</body>
+
+</html>
