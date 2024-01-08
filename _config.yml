@@ -8,7 +8,7 @@ linkedin_username: paulocesarrocha
 stack_overflow_id: 12810465
 languages: ["en", "pt-br"]
 exclude_from_localizations: ["javascript","assets", "images", "css", "scripts", "favicon.ico"]
-skills: ["android.svg","kotlin.svg","java.svg","flutter.svg","nodejs.svg","django.svg","python.svg","maria.svg","mongo.svg"]
+skills: ["android.svg","kotlin.svg","java.svg","flutter.svg","nodejs.svg","django.svg","python.svg","maria.svg","mongo.svg","docker.svg","aws.svg","git.svg","redis.svg"]
 
 # Keywords of the Site
 site-keywords: Mobile
