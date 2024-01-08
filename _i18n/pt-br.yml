@@ -1,12 +1,17 @@
 global:
   tagline: Português
-  short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum turpis a mi rutrum porta. Vestibulum rhoncus efficitur lacus at tincidunt. Quisque pulvinar mollis leo.
+  short_description: Bem-vindo ao meu pequeno universo de linhas de código.Sou apaixonado por transformar ideias em experiências completas.Convido você a dar uma olhada no meu portfólio e embarcar comigo nesta jornada, passando pelos vários projetos que misturam em sua essência técnicas e tecnologias de ponta, assim como uma grande quantidade de criatividade.
+  greeting: Oi pessoal, Eu sou
   github: GitHub
   project: Projetos
   about: Sobre
   downlad_cv: BAIXAR CV
   contact: Contato
   see_more_details: Ver Mais
+  my_description: Trabalho com desenvolvimento por mais de 5 anos, neste tempo tive o prazer de trabalhar com pessoas incríveis das quais fiz o melhor para absorver de forma eficiente algumas skills que achei imprescindível para a minha carreira.</br></br>
+    Sendo mais específico trabalho ativamente com desenvolvimento Android, fazendo o uso do Android SDK para produzir aplicações eficientes utilizando linguagens como Kotlin/Java.Faço uso de padrões de projeto como MVVM e MVP para produzir aplicativos com boa separação de responsabilidade , melhorando assim a manutenibilidade deste a longo prazo como também facilitar a aplicação de testes unitário.</br></br>
+    Não me mantive limitado apenas ao ecosistema Android, mas também tive algumas experiência com BackEnd, na produção de algumas API para consumo.Possuo experiência com bancos de dados diversos dos quais pude ver na prática como estes podem afetar o cliente final e a performance de uma aplicação. Não menos importante, tive o prazer de trabalhar com algumas plataformas cloud para entregar esses serviços, tendo o contato assim com tecnologias como Docker, kubernetes e outros para gerência de recursos.</br></br>
+    Atualmente venho buscando aprofundar meus conhecimentos em cybersecurity web e mobile por meio de cursos, POCs e CTFs.
   contact_message:  Você pode me encontrar aqui
   cv_path: /assets/resources/pt/cv.pdf
 navbar:

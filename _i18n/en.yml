@@ -1,12 +1,17 @@
 global:
   tagline: English
-  short_description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum turpis a mi rutrum porta. Vestibulum rhoncus efficitur lacus at tincidunt. Quisque pulvinar mollis leo.
+  short_description: Welcome to my little universe of code lines. I am passionate about turning ideas into complete experiences. I invite you to take a look at my portfolio and join me on this journey, exploring various projects that blend cutting-edge techniques and technologies, along with a substantial dose of creativity at their core.
+  greeting: Hi everyone, I am
   github: GitHub
   project: Projects
   about: About
   contact: Contact
   downlad_cv: DOWNLOAD CV
   see_more_details: See More
+  my_description: I have been working in development for over 5 years, during which time I had the pleasure of collaborating with amazing people from whom I endeavored to efficiently absorb essential skills for my career.</br></br>
+    More specifically, I am actively engaged in Android development, utilizing the Android SDK to create efficient applications using languages such as Kotlin/Java. I employ design patterns like MVVM and MVP to ensure good separation of concerns, thereby improving long-term maintainability and facilitating the implementation of unit tests.</br></br>
+    I haven't confined myself solely to the Android ecosystem but have also gained experience in Backend development, producing some APIs for consumption. I have expertise with various databases, observing firsthand how they can impact the end-user and application performance. Notably, I've had the opportunity to work with cloud platforms to deliver these services, gaining exposure to technologies like Docker, Kubernetes, and others for resource management.</br></br>
+    Currently, I am actively seeking to deepen my knowledge in web and mobile cybersecurity through courses, Proof of Concepts (POCs), and Capture The Flag (CTF) challenges.</br></br>
   contact_message:  You Can find me here
   cv_path: /assets/resources/en/cv.pdf
 navbar:
