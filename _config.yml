@@ -11,7 +11,7 @@ exclude_from_localizations: ["javascript","assets", "images", "css", "scripts", 
 skills: ["android.svg","kotlin.svg","java.svg","flutter.svg","nodejs.svg","django.svg","python.svg","maria.svg","mongo.svg","docker.svg","aws.svg","git.svg","redis.svg"]
 
 # Keywords of the Site
-site-keywords: Mobile
+site-keywords: Mobile, Android, MVVM, MVP, Android Development, Android App Developer, Kotlin Programming, Mobile App UX, Android Software Architecture, Full-stack Development, Desenvolvimento Android, Desenvolvedor de Aplicativos Android, Arquitetura de Software Android, Desenvolvimento Full-stack, Java para Android
 
 # Build settings
 plugins:
