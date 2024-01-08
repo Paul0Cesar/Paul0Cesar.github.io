@@ -1,8 +1,8 @@
 
 
 title: Paulo C.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: ""
+url: "" 
 github_username:  Paul0Cesar
 linkedin_username: paulocesarrocha
 stack_overflow_id: 12810465
