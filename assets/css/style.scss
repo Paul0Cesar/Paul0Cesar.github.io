@@ -11,25 +11,24 @@
     color: white;
 }
 
-.hero {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
+.profile {
     position: relative;
-}
-
-.hero-container {
+    height: 75vw;
+    width: 75vw;
+    border-radius: 5vw;
+    margin-top: 5vw;
+    max-height: 40rem;
+    max-width: 40rem;
+  }
+  .profile .profile-img {
+    height: 80vw;
+    max-height: 45rem;
     position: absolute;
     bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0 15px;
-}
+    left: 50%;
+    border-radius: 3vw;
+    transform: translateX(-50%);
+  }
 
 .star-background {
     background: linear-gradient(to bottom, #173356 0%, #274356 60%, #377386 100%);

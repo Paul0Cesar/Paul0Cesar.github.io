@@ -1,19 +1,23 @@
-<section id="home" class="star-background hero">
+<section id="home" class="d-flex flex-column h-100 star-background py-5">
     <div class="star_collection"></div>
     <div class="star_collection_2"></div>
     <div class="star_collection star_collection_3"></div>
-    <div class="hero-container container px-4 py-5">
+    <div class="container px-4 py-5">
         <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-            <div class="col-xxl-5">
-                <img src="{{site.baseurl_root}}/assets/images/profile.jpg" class="rounded d-block mx-lg-auto img-fluid"
-                    alt="My Photo" loading="lazy">
-            </div>
             <div class="col-xxl-7">
+                <div class="d-flex justify-content-center">
+                    <div class="profile">
+                        <img class="profile-img" src="{{site.baseurl_root}}/assets/images/profile.jpg" alt="My Photo" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-5">
                 <h5 class="text-white lh-1 mb-3 ">{% t global.greeting %}</h5>
                 <h1 class="text-white"> {{site.title}}</h1>
                 <p class="lead text-white"> {% t global.short_description %}</p>
                 <div class="d-grid d-md-flex justify-content-md-center">
-                    <a class="btn btn-primary btn-lg px-4" href="{{site.baseurl_root}}{{site.translations[site.lang].global.cv_path}}" download="cv.pdf">
+                    <a class="btn btn-primary btn-lg px-4 border border-white"
+                        href="{{site.baseurl_root}}{{site.translations[site.lang].global.cv_path}}" download="cv.pdf">
                         <span>
                             {% t global.downlad_cv %}
                         </span>
