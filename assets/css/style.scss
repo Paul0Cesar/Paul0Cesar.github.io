@@ -22,13 +22,19 @@
   }
   .profile .profile-img {
     height: 80vw;
-    max-height: 45rem;
+    max-height: 25rem;
     position: absolute;
-    bottom: 0;
+    bottom: 35%;
     left: 50%;
     border-radius: 3vw;
     transform: translateX(-50%);
   }
+
+  @media (max-width: 768px) {
+    .profile .profile-img {
+        bottom: 0%; 
+    }
+}
 
 .star-background {
     background: linear-gradient(to bottom, #173356 0%, #274356 60%, #377386 100%);
