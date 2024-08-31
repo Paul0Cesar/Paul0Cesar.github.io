@@ -21,8 +21,8 @@ navbar:
   projects: Projects
   contact: Contact
 langs:
-  en: English
-  pt-br: Portuguese
+  en: 🇺🇸 English
+  pt-br: 🇧🇷 Portuguese
 project_category:
   all: All
   android: Android
