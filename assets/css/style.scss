@@ -19,8 +19,8 @@
     margin-top: 5vw;
     max-height: 40rem;
     max-width: 40rem;
-  }
-  .profile .profile-img {
+}
+.profile .profile-img {
     height: 80vw;
     max-height: 25rem;
     position: absolute;
@@ -28,11 +28,11 @@
     left: 50%;
     border-radius: 3vw;
     transform: translateX(-50%);
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .profile .profile-img {
-        bottom: 0%; 
+        bottom: 0%;
     }
 }
 
@@ -60,6 +60,29 @@
         980px 180px 0 #fff;
     animation: twinkle 2s infinite;
     -webkit-animation: twinkle 2s infinite;
+}
+
+.falling_star {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    box-shadow: 0 0 4px 2px #fff;
+    border-radius: 50%;
+    animation: diagonal-line 10s linear infinite;
+}
+
+@keyframes diagonal-line {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(120vw, -120vh);
+        opacity: 0;
+    }
 }
 
 .star_collection_2 {
@@ -146,7 +169,7 @@ img.centered {
     margin-right: auto;
     max-width: 100%;
     height: auto;
-  }
+}
 
 .project-background {
     background-color: white;
