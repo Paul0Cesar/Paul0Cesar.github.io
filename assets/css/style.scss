@@ -177,16 +177,24 @@ img.centered {
     margin-top: ($spacer * 8) !important;
 }
 
-#skillList {
-    white-space: nowrap;
-    overflow-x: hidden;
-}
-
 #skillTitle {
     background-color: $primary;
     transform: translate(5%, -50%);
     display: inline-flex;
 }
+
+.img-skill {
+    width: 64px;
+    height: 64px;
+}
+@media (max-width: 576px) {
+    /* breakpoint para mobile */
+    .img-skill {
+        width: 25px;
+        height: 30px;
+    }
+}
+
 .dot {
     height: 0.4em;
     width: 0.4em;
